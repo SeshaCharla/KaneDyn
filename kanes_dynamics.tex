@@ -1,5 +1,6 @@
 \documentclass[letterpaper, 11pt]{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{float}
 \usepackage{inputenc}
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
@@ -11,6 +12,8 @@
 \usepackage{lscape}
 \usepackage{pdflscape}
 \usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{leftindex}
 
 \usepackage{listings}
 \usepackage{color}
@@ -46,16 +49,19 @@
     breakatwhitespace=false,
     breaklines=true,
     keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
+    numbers=none,
     showspaces=false,
     showstringspaces=false,
     showtabs=false,
-    tabsize=2,
+    tabsize=4,
     keywordstyle=\bfseries\color{blue},
 }
 \newcommand{\peq}{ \mathrel{+}= }
 \newcommand{\muleq}{ \mathrel{*}= }
+\newcommand{\bm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\lx}[2]{\leftindex #1 {#2}}
+\newcommand{\norm}[1]{\left\lvert #1 \right\rvert}
+
 
 % Use \lstset to make myStyle the global default
 \lstset{style=myStyle}
@@ -72,7 +78,7 @@
 %===============================================================================
 \part{Kinematics}
 \section{Problem Set 1}
-\input{ProblemSets/pset_1.tex}
+\input{ProblemSets/ProbSet_1/1a.tex}
 
 
 
