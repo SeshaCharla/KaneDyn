@@ -1,14 +1,42 @@
 \subsection{1(c)}
-Referring to Problem~$1(a)$, and assuming that $\theta, \phi$ and $\psi$ are functions of the time $t$ such that, at a certain instant $t^*$, $\phi = \theta = \psi = \pi/6 \; rad$, $\dot \phi = 4 \; rad/sec$, and $\dot \theta = \dot \psi = 6 \; rad/sec$, show that at time $t^*$,
-$$ \lx{^C}{\frac{\partial \pmb a_1}{\partial t}} = 4 \pmb a_2 + \pmb a_3$$
+\textbf{\textit{Problem}}: Referring to Problem~$1(a)$, and assuming that $\theta, \phi$ and $\psi$ are functions of the time $t$ such that, at a certain instant $t^*$, $\phi = \theta = \psi = \pi/6 \; rad$, $\dot \phi = 4 \; rad/sec$, and $\dot \theta = \dot \psi = 6 \; rad/sec$, show that at time $t^*$,
+$$ \lx{^C}{\frac{\partial \pmb a_1}{\partial t}} = 4 \pmb a_2 + 3 \pmb a_3$$
 
 \textbf{\textit{sol.}}
 
 We have,
 \begin{align*}
     \lx{^C}{{\pmb a_1}} &= R_3(\phi)[1, :] R_1(\theta) \times \lx{^C}{\pmb c}\\
+    \\
     %===
     \implies \lx{^C}{\frac{d \pmb a_1}{dt}} &= \left( \frac{\partial R_3(\phi)[1, :]}{\partial \phi}   R_1(\theta) \dot \phi + R_3(\phi)[1, :] \frac{\partial R_1(\theta)}{\partial \theta } \dot \theta \right) \times \lx{^C}{\pmb c}\\
     %===
-    &= \left( \frac{\partial R_3(\phi)[1, :]}{\partial \phi}   R_1(\theta) \dot \phi + R_3(\phi)[1, :] \frac{\partial R_1(\theta)}{\partial \theta } \dot \theta \right) \times R_1^T(\theta) R_3^T(\phi) \times \lx{^C}{\pmb a}
+    &= \left( \frac{\partial R_3(\phi)[1, :]}{\partial \phi}   R_1(\theta) \dot \phi + R_3(\phi)[1, :] \frac{\partial R_1(\theta)}{\partial \theta } \dot \theta \right) \times R_1^T(\theta) R_3^T(\phi) \times \lx{^C}{\pmb a}\\
+    %==
+    &= \left[
+    \left(\frac{\partial R_3(\phi)[1, :]}{\partial \phi}   R_3^T(\phi)
+    \right)\dot \phi +
+    \left(R_3(\phi)[1, :] \frac{\partial R_1(\theta)}{\partial \theta } R_1^T(\theta) R_3^T(\phi)
+    \right) \dot \theta
+    \right]\times \lx{^C}{\pmb a}\\
+    %==
+    &= \left[
+    \left(\bm{-\sin \phi & \cos \phi & 0}\bm{
+            \cos \phi & -\sin \phi  & 0\\
+            \sin \phi & \cos \phi & 0\\
+            0          & 0         & 1
+        }
+    \right)\dot \phi +
+    \left(\bm{0 & 0 & \sin \phi}
+    \right) \dot \theta
+    \right]\times \lx{^C}{\pmb a}
+    %==
+    \qquad \left[\text{From } 1(b) \right]\\
+    %==
+    &= \left( \bm{0&1&0} \dot \phi + \bm{0 & 0 & \sin \phi} \dot \theta \right) \lx{^C}{{\pmb a}}\\
+    %===
+    \\
+    \text{Substituting }&\; \phi = \frac{\pi}{6} \: \dot \phi =4 \; \dot \theta = 6\\
+    %===
+    \implies \lx{^C}{\frac{d \pmb a_1}{dt}} &= 4 \pmb a_2 + 3 \pmb a_3
 \end{align*}
