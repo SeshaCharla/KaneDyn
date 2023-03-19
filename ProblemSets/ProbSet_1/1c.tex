@@ -1,0 +1,14 @@
+\subsection{1(c)}
+Referring to Problem~$1(a)$, and assuming that $\theta, \phi$ and $\psi$ are functions of the time $t$ such that, at a certain instant $t^*$, $\phi = \theta = \psi = \pi/6 \; rad$, $\dot \phi = 4 \; rad/sec$, and $\dot \theta = \dot \psi = 6 \; rad/sec$, show that at time $t^*$,
+$$ \lx{^C}{\frac{\partial \pmb a_1}{\partial t}} = 4 \pmb a_2 + \pmb a_3$$
+
+\textbf{\textit{sol.}}
+
+We have,
+\begin{align*}
+    \lx{^C}{{\pmb a_1}} &= R_3(\phi)[1, :] R_1(\theta) \times \lx{^C}{\pmb c}\\
+    %===
+    \implies \lx{^C}{\frac{d \pmb a_1}{dt}} &= \left( \frac{\partial R_3(\phi)[1, :]}{\partial \phi}   R_1(\theta) \dot \phi + R_3(\phi)[1, :] \frac{\partial R_1(\theta)}{\partial \theta } \dot \theta \right) \times \lx{^C}{\pmb c}\\
+    %===
+    &= \left( \frac{\partial R_3(\phi)[1, :]}{\partial \phi}   R_1(\theta) \dot \phi + R_3(\phi)[1, :] \frac{\partial R_1(\theta)}{\partial \theta } \dot \theta \right) \times R_1^T(\theta) R_3^T(\phi) \times \lx{^C}{\pmb a}
+\end{align*}
