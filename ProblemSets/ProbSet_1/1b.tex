@@ -1,0 +1,54 @@
+\subsection{1(b)}
+Referring to Problem $1(a)$, determine $w_1, w_2$ and  $w_3$ such that
+$$ \lx{^C}{\frac{\partial \pmb a_1}{\partial \theta}} = w_1 \pmb a_1 + w_2 \pmb a_2 + w_3 \pmb a_3$$
+
+\textbf{\textit{sol.}}
+We have,
+\begin{align*}
+    \lx{^C}{\frac{\partial \pmb a_1}{\partial \theta}}  &=
+    \frac{\partial}{\partial \theta} [R_3(\phi)[1,:]R_1(\theta)] \times \lx{^C}{\pmb c}
+    %==
+    = R_3(\phi)[1,:] \frac{\partial R_1(\theta)}{\partial \theta} \times \lx{^C}{\pmb c}
+    %===
+    = R_3(\phi)[1,:] \frac{\partial R_1(\theta)}{\partial \theta} \times [R_3(\phi)R_1(\theta)]^{-1} \times \lx{^C}{\pmb a}\\
+    %==
+    &=R_3(\phi)[1,:] \frac{\partial R_1(\theta)}{\partial \theta} \times R_1^T(\theta) R_3^T(\phi)\times \lx{^C}{\pmb a}
+    %==
+    \qquad \left[ \because R_i^{-1} = R_i^T \right]\\
+    %==
+    &= \bm{\cos \phi & \sin \phi  & 0}
+    \bm{
+            0 & 0 & 0\\
+            0 & -\sin \theta & \cos \theta\\
+            0 & -\cos \theta & -\sin \theta
+        }
+    \bm{
+            1 & 0 & 0\\
+            0 & \cos \theta & -\sin \theta\\
+            0 & \sin \theta & \cos \theta
+    }
+    \bm{
+            \cos \phi & -\sin \phi  & 0\\
+            \sin \phi & \cos \phi & 0\\
+            0          & 0         & 1
+        }
+    \times \lx{^c}{\pmb a}\\
+     %==
+    &= \bm{\cos \phi & \sin \phi  & 0}
+    \bm{
+            0 & 0 & 0\\
+            0 & 0 & 1\\
+            0 & 1 & 0
+        }
+    \bm{
+            \cos \phi & -\sin \phi  & 0\\
+            \sin \phi & \cos \phi & 0\\
+            0          & 0         & 1
+        }
+    \times \lx{^c}{\pmb a}
+    %==
+    = \bm{0 & 0 & \sin \phi} \times \lx{^c}{\pmb a}\\
+    %==
+    \text{Hence, }&\\
+    & w_1 = w_2 = 0, \: w_3 = \sin \phi
+\end{align*}
