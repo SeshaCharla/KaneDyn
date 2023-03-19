@@ -37,7 +37,7 @@ We have the following rotation matrices:
             0          & 0         & 1
         }
      } _ {R_3 (\phi)}
-    \lx{^B}{\bm{\pmb b_1 \\ \pmb b_2 \\ \pmb b_3}} \quad
+    \lx{^B}{\bm{\pmb b_1 \\ \pmb b_2 \\ \pmb b_3}} ;\:
     %===
     \lx{^C}{\bm{\pmb b_1 \\ \pmb b_2 \\ \pmb b_3}} =
     \underbrace{
@@ -47,7 +47,7 @@ We have the following rotation matrices:
             0 & -\sin \theta & \cos \theta
         }
      } _ {R_1 (\theta)}
-    \lx{^C}{\bm{\pmb c_1 \\ \pmb c_2 \\ \pmb c_3}} \quad
+    \lx{^C}{\bm{\pmb c_1 \\ \pmb c_2 \\ \pmb c_3}} ;\:
     %===
     \lx{^D}{\bm{\pmb c_1 \\ \pmb c_2 \\ \pmb c_3}} =
      \underbrace{
@@ -57,7 +57,7 @@ We have the following rotation matrices:
             0          & 0         & 1
         }
      } _ {R_3 (\psi)}
-    \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}} \quad
+    \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}} \\
     %===
 \end{align*}
 
@@ -130,7 +130,7 @@ Thus, we have,
  \item
  \begin{align*}
     \lx{^D}{\frac {\partial \pmb b_2}  {\partial \theta}} &= \frac {\partial}  {\partial \theta} \left((R_1(\theta) R_3(\psi))[2,:] \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}} \right)
-    \qquad \left[\because \pmb d_1, \pmb d_2, \pmb d_3 \text{ are fixed in } C \right]\\
+    \qquad \left[\because \pmb d_1, \pmb d_2, \pmb d_3 \text{ are fixed in } D \right]\\
     %===
     &= \frac{\partial (R_1(\theta) R_3(\psi))[2,:]}{\partial \theta} \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}
     %===
@@ -159,7 +159,50 @@ Thus, we have,
 
  \item
 \begin{align*}
-    \lx{^D}{\frac {\partial \pmb b_2}  {\partial \psi}} &=
+    \lx{^D}{\frac {\partial \pmb b_2}  {\partial \psi}} &= \frac{\partial}{\partial \psi} \left((R_1(\theta) R_3(\psi))[2,:] \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}} \right)
+    \qquad \left[\because \pmb d_1, \pmb d_2, \pmb d_3 \text{ are fixed in } D \right]\\
+    %==
+    &= R_1(\theta)[2,:] \times \frac{\partial R_3(\psi)}{\partial \psi} \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}
+    %==
+    = \bm{0 & \cos \theta & \sin \theta} \bm{-\sin \psi & \cos \psi & 0 \\
+                                             -\cos \psi & -\sin \psi & 0\\
+                                             0 & 0 & 0}
+                        \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}\\
+    %==
+    &= \bm{-\cos \theta \cos \psi & -\cos \theta \sin \psi & 0} \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}\\
+    %==
+    &\implies  \lx{^D}{\norm{\frac {\partial \pmb b_2}  {\partial \psi}}} = \norm{\cos \theta}
 \end{align*}
- \item $\lx{^D}{\frac {\partial \pmb a_1}  {\partial \psi}}$
+
+\item
+\begin{align*}
+    \lx{^D}{\frac {\partial \pmb a_1}  {\partial \psi}} &=  \frac{\partial}{\partial \psi} \left((R_3(\phi)R_1(\theta) R_3(\psi))[2,:] \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}} \right)
+    %==
+    = R_3(\phi)[1,:] \times R_1(\theta) \times \frac{\partial R_3(\psi)}{\partial \psi} \times \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}
+    %==
+    %\quad \left[\because \pmb d_1, \pmb d_2, \pmb d_3 \text{ are fixed in } D \right]\\
+    %==
+    &= \bm{\cos \phi & \sin \phi  & 0}
+      \bm{
+            1 & 0 & 0\\
+            0 & \cos \theta & \sin \theta\\
+            0 & -\sin \theta & \cos \theta
+        }
+      \bm{
+            -\sin \psi & \cos \psi  & 0\\
+            -\cos \psi & -\sin \psi & 0\\
+            0          & 0         & 0
+        }\lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}\\
+    %==
+    &= \bm{-\cos \phi \sin \psi - \sin \phi \cos \theta \cos \psi &
+          \cos \phi \cos \psi - \sin \phi \cos \theta \sin \psi &
+          0} \lx{^D}{\bm{\pmb d_1 \\ \pmb d_2 \\ \pmb d_3}}\\
+    %==
+     \implies \lx{^D}{\norm{\frac {\partial \pmb a_1}  {\partial \psi}}} &=
+    \sqrt{(-\cos \phi \sin \psi - \sin \phi \cos \theta \cos \psi )^2 +
+    (\cos \phi \cos \psi - \sin \phi \cos \theta \sin \psi )^2}\\
+    %==
+    &= (\cos^2 \phi + \sin^2\phi \sin^2 \theta)^{1/2}
+\end{align*}
+
 \end{enumerate}
