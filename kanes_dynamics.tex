@@ -15,47 +15,43 @@
 \usepackage{multicol}
 \usepackage{leftindex}
 
+%Listings
 \usepackage{listings}
 \usepackage{color}
 
-%Default fixed font does not support bold face
-\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
-\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
 
-% Custom colors
-\definecolor{deepblue}{rgb}{0,0,0.5}
-\definecolor{deepred}{rgb}{0.6,0,0}
-\definecolor{deepgreen}{rgb}{0,0.5,0}
-
-
-% color def
-\definecolor{darkred}{rgb}{0.6,0.0,0.0}
-\definecolor{darkgreen}{rgb}{0,0.50,0}
-\definecolor{lightblue}{rgb}{0.0,0.42,0.91}
-\definecolor{orange}{rgb}{0.99,0.48,0.13}
-\definecolor{grass}{rgb}{0.18,0.80,0.18}
-\definecolor{pink}{rgb}{0.97,0.15,0.45}
-
-% listings
-% Define a custom color
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-
-% Define a custom style
-\lstdefinestyle{myStyle}{
-    backgroundcolor=\color{backcolour},
-    commentstyle=\color{codegreen},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,
-    breaklines=true,
-    keepspaces=true,
-    numbers=none,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=4,
-    keywordstyle=\bfseries\color{blue},
+\lstset{
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\small\ttfamily,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1,                % start line enumeration with line 1000
+  frame=false,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=5,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=4,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
 \newcommand{\peq}{ \mathrel{+}= }
 \newcommand{\muleq}{ \mathrel{*}= }
 \newcommand{\bm}[1]{\begin{bmatrix} #1 \end{bmatrix}}
@@ -64,8 +60,6 @@
 \newcommand{\itbf}[1]{\textit{\textbf{#1}}}
 
 
-% Use \lstset to make myStyle the global default
-\lstset{style=myStyle}
 
 \title{Problems Sets from\\Dynamics by Kane}
 \author{Sesha N. Charla}
@@ -87,7 +81,20 @@
 \input{ProblemSets/ProbSet_1/1f.tex}
 \input{ProblemSets/ProbSet_1/1g.tex}
 \input{ProblemSets/ProbSet_1/1h.tex}
-
+%===============================================================================
+\newpage
+\section{Problem Set 2}
+\input{ProblemSets/ProbSet_2/2a.tex}
+\input{ProblemSets/ProbSet_2/2b.tex}
+\input{ProblemSets/ProbSet_2/2c.tex}
+\input{ProblemSets/ProbSet_2/2d.tex}
+\input{ProblemSets/ProbSet_2/2e.tex}
+\input{ProblemSets/ProbSet_2/2f.tex}
+\input{ProblemSets/ProbSet_2/2g.tex}
+\input{ProblemSets/ProbSet_2/2h.tex}
+\input{ProblemSets/ProbSet_2/2i.tex}
+%===============================================================================
+\newpage
 
 
 \end{document}
