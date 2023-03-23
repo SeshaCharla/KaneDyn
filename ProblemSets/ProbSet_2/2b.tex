@@ -1,1 +1,38 @@
-\subsection{2(b) }
+\subsection{2(b) $\pmb \omega = \sum \pmb \omega_{\dot q_i} \dot q_i +  \pmb \omega_t$}
+
+\itbf{Sol.}\\
+
+Given,
+
+The motion of $B^*$ on $C$ is prescribed (predeterimined) $\implies \Omega(t)$ is give.
+
+We have angular velocity written interms of partial rates:
+\begin{align*}
+    \pmb \omega = \sum \pmb \omega_{\dot q_i} \dot q_i +  \pmb \omega_t
+\end{align*}
+
+We have from $2(a)$,
+\begin{align*}
+    \lx{^R}{\pmb \omega}^B &=
+    \Omega(t) P^T  \bm{\pmb n_1 \\ \pmb n_2 \\ \pmb n_3}
+        + \bm{\dot \theta_1 & \dot \theta_2 & \dot \theta_3} T \bm{\pmb n_1 \\ \pmb n_2 \\ \pmb n_3}\\
+    %===
+    P &= \bm{s_1 s_3 - c_1s_2c_3 \\ s_1c_3 + c_1 s_2 s_3 \\ c_1 c_2} \qquad
+    T = \bm{c_2 c_3 & -c_2 s_3 & s_2\\
+             s_3     & c_3      & 0\\
+             0       & 0        & 1}
+    %===
+\end{align*}
+
+Let, $\pmb n = \bm{\pmb n_1 & \pmb n_2 & \pmb n_3}^T$
+
+Thus, we have the partial rates:
+\begin{align*}
+    \lx{^R}{\pmb \omega}^B_t &= \lx{^R}{\frac{\partial \pmb \omega^B}{\partial t}} = \dot \Omega P^T \pmb n\\
+    %===
+    \lx{^R}{\pmb \omega}^B_{\dot \theta_1} &= \lx{^R}{\frac{\partial \pmb \omega^B}{\partial \dot \theta_1}} = T[1,:] \pmb n = \bm{c_2 c_3 & -c_2 s_3 & s_2} \pmb n\\
+    %===
+    \lx{^R}{\pmb \omega}^B_{\dot \theta_2} &= \lx{^R}{\frac{\partial \pmb \omega^B}{\partial \dot \theta_2}} = T[2,:] \pmb n = \bm{s_3     & c_3      & 0} \pmb n\\
+    %===
+    \lx{^R}{\pmb \omega}^B_{\dot \theta_3} &= \lx{^R}{\frac{\partial \pmb \omega^B}{\partial \dot \theta_3}} = T[3,:] \pmb n = \bm{0&0&1} \pmb n\\
+\end{align*}

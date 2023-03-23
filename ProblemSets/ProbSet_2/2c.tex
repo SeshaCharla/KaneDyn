@@ -1,0 +1,26 @@
+\subsection{2(c) Prove that $\lx{^B}{\pmb \omega}^A = -\lx{^A}{\pmb \omega}^B$
+but,
+$\lx{^A}{d \pmb \omega \backslash d t}= \lx{^B}{{d \pmb \omega} \backslash {dt}}$
+}
+
+Given, $\lx{^B}{\pmb \omega}^A = \pmb \omega$.
+
+Let, $\pmb v$ be a vector, then
+\begin{align*}
+    \lx{^B}{\frac{d \pmb v}{d t}} &= \lx{^A}{\frac{d \pmb v}{d t}} + \pmb \omega \times \pmb v
+    %===
+    \implies \lx{^A}{\frac{d \pmb v}{d t}}  = \lx{^B}{\frac{d \pmb v}{d t}} - \pmb \omega \times \pmb v\\
+    %==-
+    \text{but, }\quad \lx{^A}{\frac{d \pmb v}{d t}}  &= \lx{^B}{\frac{d \pmb v}{d t}} + \lx{^A}{\pmb \omega}^B \times v\\
+    %==-
+    \text{By comparision, }\quad  \lx{^A}{\pmb \omega}^B &= - \pmb \omega\\
+     %==
+    \therefore  \lx{^B}{\pmb \omega}^A &= \pmb \omega \implies \lx{^A}{\pmb \omega}^B = - \pmb \omega & q.e.d
+\end{align*}
+
+Using the operator definition of angular velocity vector on itself:
+\begin{align*}
+    \lx{^B}{\frac{d \pmb \omega }{d t}}  &= \lx{^A}{\frac{d \pmb \omega }{d t}} + \underbrace{\pmb \omega \times  \pmb \omega}_{=0} \\
+    %==
+    \therefore \lx{^B}{\frac{d \pmb \omega }{d t}}  &= \lx{^A}{\frac{d \pmb \omega }{d t}} &q.e.d\\
+\end{align*}
