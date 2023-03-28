@@ -1,0 +1,24 @@
+\subsection{2(h) $\alpha$ when body and frame have paraller $\omega$'s}
+Given, $\{\pmb n_1, \pmb n_2, \pmb n_3 \} \in N$ has an angular velocity $\Omega$ in R, and
+\begin{align*}
+    \lx{^R}{\pmb \omega}^B &= \omega_1 \pmb n_1 + \omega_2 \pmb n_2 + \omega_3 \pmb n_3\\
+    \lx{^R}{\pmb \alpha}^B &= \alpha_1 \pmb n_1 + \alpha_2 \pmb n_2 + \alpha_3 \pmb n_3\\
+    \text{and,}\qquad \alpha_i &= d \omega_i/dt = \dot \omega_i
+\end{align*}
+Consider,
+\begin{align*}
+    \lx{^R}{\pmb \alpha}^B &= \lx{^R}{\frac{d\pmb \omega^B}{dt}} =\sum_{i=1}^3 \left( \dot \omega_i\pmb n_i + \omega_i \lx{^R}{\frac{d\pmb n_i}{dt}} \right)
+    = \sum_{i=1}^3 \left( \alpha_i \pmb n_i + \omega_i \lx{^R}{\frac{d\pmb n_i}{dt}} \right) = \lx{^R}{\pmb \alpha}^B + \sum_{i=1}^3 \left(\omega_i \lx{^R}{\frac{d\pmb n_i}{dt}} \right)\\
+    &\qquad \qquad  \iff \sum_{i=1}^3 \left(\omega_i \lx{^R}{\frac{d\pmb n_i}{dt}} \right) = 0
+\end{align*}
+We have,
+\begin{align*}
+    \sum_{i=1}^3 \left(\omega_i \lx{^R}{\frac{d\pmb n_i}{dt}} \right) &
+    = \sum_{i=1}^3 \left(\omega_i (\Omega \times \pmb n_i) \right)
+    = \Omega \times ( \omega_1 \pmb n_1 + \omega_2 \pmb n_2 + \omega_3 \pmb n_3)
+    = \Omega \times \pmb \omega
+\end{align*}
+thus,
+\begin{align*}
+    \alpha_i &=\frac{d \omega_i}{dt}, \; for \; i = 1,2,3 \; \iff \Omega \times \pmb \omega = 0 &q.e.d
+\end{align*}
